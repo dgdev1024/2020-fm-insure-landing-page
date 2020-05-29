@@ -5,11 +5,14 @@
 
 // Imports
 import React from 'react';
+import Header from '../header';
 import './index.scss';
 
 // Component
 const App = () => (
-  <main></main>
+  <main>
+    <Header />
+  </main>
 );
 
 // Export

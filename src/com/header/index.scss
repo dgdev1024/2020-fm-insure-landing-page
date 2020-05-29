@@ -1,0 +1,152 @@
+@import '../../global.scss';
+
+$header-top-size: 80px;
+
+header {
+  position: fixed;
+  width: 100%;
+
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: $header-top-size auto;
+    grid-template-areas: 'logo button' 'nav nav';
+
+    @media #{$screen-md} {
+      width: 90%;
+      grid-template-columns: $header-top-size;
+      grid-template-areas: 'logo nav';
+    }
+
+    img {
+      grid-area: logo;
+      justify-self: start;
+      align-self: center;
+      margin: 0px 32px;
+    }
+
+    button {
+      grid-area: button;
+      justify-self: end;
+      align-self: center;
+
+      width: 32px;
+      height: 32px;
+      margin: 0px 32px;
+      background-image: url('../../img/icon-hamburger.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      transition-property: background-image;
+      transition-duration: $time-transition;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.shown {
+        background-image: url('../../img/icon-close.svg');
+      }
+
+      @media #{$screen-md} {
+        display: none;
+      }
+    }
+
+    nav {
+      grid-area: nav;
+      height: 0px;
+      overflow: hidden;
+      transition: $time-transition;
+      opacity: 0;
+
+      background-image: url('../../img/bg-pattern-mobile-nav.svg');
+      background-color: $color-dark-violet;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom;
+
+      &.shown {
+        height: calc(100vh - 80px);
+        padding-top: 16px;
+        opacity: 1;
+      }
+
+      @media #{$screen-md} {
+        justify-self: end;
+        align-self: center;
+        margin: 0px 32px;
+        background: none;
+        background-color: white;
+        height: auto;
+        opacity: 1;
+
+        &.shown {
+          height: auto;
+          padding-top: 0px;
+        }
+      }
+
+      a {
+        display: block;
+        width: 90%;
+        margin: 8px auto;
+        padding: 12px 0px;
+        font-size: 1.2em;
+        font-weight: $font-weight-bold;
+        color: $color-very-light-gray;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        transition: $time-transition;
+
+        &:hover {
+          color: white;
+        }
+
+        &#view-plans {
+          border: 1px solid $color-very-light-gray;
+
+          &:hover {
+            background-color: $color-very-light-gray;
+            color: $color-very-dark-violet;
+            border-color: transparent;
+          }
+        }
+
+        @media #{$screen-md} {
+          display: inline-block;
+          width: auto;
+          margin: 0px 8px;
+          font-size: 1em;
+          color: $color-dark-violet;
+
+          @media #{$screen-lg} {
+            margin: 0px 16px;
+          }
+
+          &:hover {
+            color: $color-very-dark-violet;
+          }
+
+          &#view-plans {
+            padding-left: 16px;
+            padding-right: 16px;
+            border-color: $color-dark-violet;
+
+            @media #{$screen-lg} {
+              padding-left: 32px;
+              padding-right: 32px;
+            }
+
+            &:hover {
+              background-color: $color-very-dark-violet;
+              color: $color-very-light-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
