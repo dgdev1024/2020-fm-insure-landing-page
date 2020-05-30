@@ -16,13 +16,16 @@ const Header = () => {
   const toggleNav = () => {
     const { classList: navClassList } = nav.current;
     const { classList: toggleClassList } = navToggle.current;
+    const { classList: bodyClassList } = document.body;
 
     if (navClassList.contains('shown')) {
       navClassList.remove('shown');
       toggleClassList.remove('shown');
+      bodyClassList.remove('no-scroll');
     } else {
       navClassList.add('shown');
       toggleClassList.add('shown');
+      bodyClassList.add('no-scroll');
     }
   };
   

@@ -10,7 +10,15 @@
   font-weight: $font-weight-normal;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .container {
   width: 90%;
   margin: 0px auto;
+
+  @media #{$screen-md} {
+    width: 80%;
+  }
 }

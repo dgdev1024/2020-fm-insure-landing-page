@@ -1,0 +1,146 @@
+@import '../../global.scss';
+
+.fm-hero-section {
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: $color-dark-violet;
+
+  @media #{$screen-md} {
+    min-height: none;
+    height: 100vh;
+    background-color: white;
+    background-image: 
+      url('../../img/bg-pattern-intro-right-desktop.svg'),
+      url('../../img/bg-pattern-intro-left-desktop.svg'),
+      linear-gradient(
+        to bottom,
+        $color-dark-violet,
+        $color-dark-violet 80%,
+        white 80%
+      );
+    background-repeat: no-repeat;
+    background-size: auto 50%, 10% 40%, cover;
+    background-position: top right, bottom left;
+  }
+
+  .container {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    @media #{$screen-md} {
+      width: 80%;
+      margin: 0px auto;
+      padding-top: 64px;
+      flex-direction: row-reverse;
+    }
+
+    .fm-hero-image {
+      height: 450px;
+      background-image:
+        url('../../img/image-intro-mobile.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @media #{$screen-sm} {
+        height: 600px;
+      }
+
+      @media #{$screen-md} {
+        height: auto;
+        width: 50%;
+        background-image: url('../../img/image-intro-desktop.jpg');
+        background-size: contain;
+        background-position: top;
+      }
+    }
+
+    .fm-hero-caption {
+      width: 100%;
+      margin: 0px auto;
+      padding: 80px 0px 64px;
+      color: white;
+      text-align: center;
+      background-image:
+        url('../../img/bg-pattern-intro-left-mobile.svg'),
+        url('../../img/bg-pattern-intro-right-mobile.svg');
+      background-repeat: no-repeat;
+      background-position: top left, bottom -200px right;
+
+      @media #{$screen-md} {
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+        margin-right: 16px;
+        text-align: left;
+        background-image: none;
+      }
+
+      .fm-top-border {
+        display: none;
+
+        @media #{$screen-md} {
+          display: block;
+          width: 30%;
+          height: 1px;
+          margin-bottom: 48px;
+          background-color: $color-very-light-gray;
+        }
+      }
+
+      h1 {
+        width: 90%;
+        margin: 0px auto;
+        font-family: $font-family-heading;
+        font-weight: $font-weight-heading;
+        font-size: 2.2em;
+        line-height: 1em;
+
+        @media #{$screen-md} {
+          width: 100%;
+          font-size: 2.5em;
+        }
+
+        @media #{$screen-lg} {
+          font-size: 3em;
+        }
+
+        @media #{$screen-xl} {
+          font-size: 3.5em;
+        }
+      }
+
+      p {
+        width: 90%;
+        margin: 0px auto;
+        padding: 16px 0px 24px;
+        color: $color-very-light-gray;
+        line-height: 1.5em;
+
+        @media #{$screen-md} {
+          width: 100%;
+        }
+      }
+
+      a {
+        display: inline-block;
+        padding: 8px 24px;
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        border: 1px solid white;
+        transition: $time-transition;
+
+        &:hover {
+          color: $color-dark-violet;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

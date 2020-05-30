@@ -1,0 +1,90 @@
+@import '../../global.scss';
+
+footer {
+  padding: 64px 0px;
+  background-color: $color-very-light-gray;
+  background-image: url('../../img/bg-pattern-footer-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+  @media #{$screen-md} {
+    background-image: url('../../img/bg-pattern-footer-desktop.svg');
+  }
+
+  .fm-footer-top {
+    border-bottom: 1px solid $color-grayish-blue;
+    display: grid;
+    grid-template-rows: auto auto;
+
+    @media #{$screen-md} {
+      grid-template-rows: auto;
+      grid-template-columns: auto auto;
+    }
+
+    .fm-logo {
+      padding-bottom: 32px;
+      align-self: center;
+      justify-self: center;
+
+      @media #{$screen-md} {
+        justify-self: start;
+      }
+    }
+
+    .fm-social-links {
+      padding-bottom: 32px;
+      align-self: center;
+      justify-self: center;
+
+      @media #{$screen-md} {
+        justify-self: end;
+      }
+
+      a {
+        margin: 0px 8px;
+      }
+    }
+
+  }
+
+  .fm-footer-body {
+    padding-top: 16px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media #{$screen-md} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fm-footer-links {
+      padding: 16px 0px;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: $font-weight-bold;
+      text-align: center;
+
+      @media #{$screen-md} {
+        text-align: left;
+      }
+
+      p {
+        padding-bottom: 16px;
+        font-weight: inherit;
+        color: $color-dark-grayish-violet;
+      }
+
+      a {
+        padding-bottom: 8px;
+        display: block;
+        font-weight: inherit;
+        color: $color-very-dark-violet;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
