@@ -1,13 +1,13 @@
 @import '../../global.scss';
 
 .fm-hero-section {
-  min-height: 100vh;
+  min-height: 800px;
   padding-top: 80px;
   background-color: $color-dark-violet;
 
   @media #{$screen-md} {
     min-height: none;
-    height: 100vh;
+    height: 800px;
     background-color: white;
     background-image: 
       url('../../img/bg-pattern-intro-right-desktop.svg'),
