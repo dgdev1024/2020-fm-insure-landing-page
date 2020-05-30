@@ -24,7 +24,11 @@ header {
       grid-area: logo;
       justify-self: start;
       align-self: center;
-      margin-right: 32px;
+      margin: 0px 32px;
+
+      @media #{$screen-md} {
+        margin: 0px;
+      }
     }
 
     button {

@@ -38,12 +38,26 @@ footer {
       align-self: center;
       justify-self: center;
 
+      display: flex;
+
       @media #{$screen-md} {
         justify-self: end;
       }
 
       a {
         margin: 0px 8px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: $time-transition;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
       }
     }
 
