@@ -42,6 +42,7 @@ header {
       background-image: url('../../img/icon-hamburger.svg');
       background-repeat: no-repeat;
       background-position: center;
+      border: none;
       transition-property: background-image;
       transition-duration: $time-transition;
 
