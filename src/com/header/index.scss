@@ -15,7 +15,7 @@ header {
     grid-template-areas: 'logo button' 'nav nav';
 
     @media #{$screen-md} {
-      width: 90%;
+      width: 80%;
       grid-template-columns: $header-top-size;
       grid-template-areas: 'logo nav';
     }
@@ -24,7 +24,7 @@ header {
       grid-area: logo;
       justify-self: start;
       align-self: center;
-      margin: 0px 32px;
+      margin-right: 32px;
     }
 
     button {
@@ -76,7 +76,7 @@ header {
       @media #{$screen-md} {
         justify-self: end;
         align-self: center;
-        margin: 0px 32px;
+        margin-left: 32px;
         background: none;
         background-color: white;
         height: auto;
@@ -132,6 +132,7 @@ header {
           }
 
           &#view-plans {
+            margin-right: 0px;
             padding-left: 16px;
             padding-right: 16px;
             border-color: $color-dark-violet;
