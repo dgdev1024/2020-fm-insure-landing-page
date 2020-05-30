@@ -9,6 +9,8 @@ footer {
   
   @media #{$screen-md} {
     background-image: url('../../img/bg-pattern-footer-desktop.svg');
+    background-size: auto;
+    background-position: top left;
   }
 
   .fm-footer-top {
